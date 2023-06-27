@@ -1,0 +1,15 @@
+1.- Para instalar e inicializar eslint en una aplicacion react usando vite se deben correr
+los siguientes comandos:
+
+npm install eslint --dev
+npx eslint --init
+
+2.- Las opciones usadas por lama dev en la aplicacion fiverr son las siguientes:
+
+To check syntax and find problems
+Jascript modules (import/export)
+React
+Typescript: No
+Where does your code run: Browser
+What format do you want your config file to be in: JSON
+Which package manager are you using: npm
