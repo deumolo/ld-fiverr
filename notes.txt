@@ -1,10 +1,4 @@
-1.- Para instalar e inicializar eslint en una aplicacion react usando vite se deben correr
-los siguientes comandos:
-
-npm install eslint --dev
-npx eslint --init
-
-2.- Las opciones usadas por lama dev en la aplicacion fiverr son las siguientes:
+1.- Las opciones usadas por lama dev en la aplicacion fiverr son las siguientes:
 
 To check syntax and find problems
 Jascript modules (import/export)
@@ -13,3 +7,51 @@ Typescript: No
 Where does your code run: Browser
 What format do you want your config file to be in: JSON
 Which package manager are you using: npm
+
+2.- Para instalar e inicializar eslint en una aplicacion react usando vite se deben correr
+los siguientes comandos:
+
+npm install eslint --dev
+npx eslint --init
+
+3.- Para una navegacion sencilla se puede usar react-router-dom con el siguiente comando:
+npm install react-router-dom
+
+4.- Por lo regular no se usan Event Listeners en react, pero al usar window.addEventListener,
+no hay problema para detectar cambios en el scroll
+
+5.- Cuando se le quiere agregar una animación a un elemento que va a cambiar de propiedades,
+ya sea tamaño, color de fondo, etc.
+
+Se le agrega la propiedad transition: all 0.5s ease; a la clase del elemento que va a cambiar.
+
+6.- Para checar si el scroll ha cambiado en la pantalla se puede usar el hook useEffect de la 
+siguiente manera:
+
+
+  const isActive = () => {
+    if (window.scrollY > 20) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  };
+
+  useEffect(() => {
+    console.log(window.scrollY);
+    window.addEventListener('scroll', isActive);
+
+    return () => {
+      window.removeEventListener('scroll', isActive);
+    };
+  }, []);
+
+
+7.- El método isActive checará la posición actual del scroll bar cada vez que el useEffect se ejecute,
+en caso de pasar el limite configurado cambiará el estado de la variable active segun corresponda.
+
+8.- El hook useEffect agregará un window.eventListener con la función programada,
+y en el cleanup se removerá el mismo eventListener para evitar fuga de memoria.
+
+9.- Ya con la variable active dependiendo del scroll, se pueden agregar o cambiar clases css
+a los elementos necesitados en nuestra aplicación.
