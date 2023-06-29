@@ -81,17 +81,17 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active ||
-        (pathname !== '/' && (
-          <>
-            <hr />
 
-            <div className="menu">
+      {(active || pathname !== '/') && (
+        <>
+          <hr />
+
+          <div className="menu">
               <span>Test</span>
               <span>Test 2</span>
-            </div>
-          </>
-        ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
