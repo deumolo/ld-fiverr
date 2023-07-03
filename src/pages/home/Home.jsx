@@ -3,9 +3,10 @@ import './Home.scss';
 import Featured from '../../components/featured/Featured';
 import TrustedBy from '../../components/trustedBy/TrustedBy';
 import Slide from '../../components/slide/Slide';
-import { cards } from '../../data';
+import { cards, projects } from '../../data';
 import Slider from 'infinite-react-carousel';
 import CatCard from '../../components/catCard/CatCard';
+import ProjectCard from '../../components/projectCard/ProjectCard';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
       <div className="home">
         <Featured />
         <TrustedBy />
-        <Slide children={cards} slidesToShow={5} arrowsScroll={4}>
+        <Slide children={cards} slidesToShow={4} arrowsScroll={4}>
           {cards.map((card) => {
             return (
               <div key={card.id}>
@@ -96,6 +97,15 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Slide slidesToShow={4} arrowsScroll={4}>
+          {projects.map((project) => {
+            return (
+              <div key={project.id}>
+                <ProjectCard project={project} />
+              </div>
+            );
+          })}
+        </Slide>
       </div>
     </>
   );
