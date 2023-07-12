@@ -97,6 +97,8 @@ const Navbar = () => {
             <Link className="link menuLink">Business</Link>
             <Link className="link menuLink">Lifestyle</Link>
           </div>
+
+          <hr />
         </>
       )}
     </div>
