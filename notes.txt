@@ -55,3 +55,41 @@ y en el cleanup se removerá el mismo eventListener para evitar fuga de memoria.
 
 9.- Ya con la variable active dependiendo del scroll, se pueden agregar o cambiar clases css
 a los elementos necesitados en nuestra aplicación.
+
+10.- En el archivo eslint se podría configurar para evitar las alertas de variables no usadas:
+    "rules": {
+        "no-unused-vars": "warn",
+        "react/prop-types": "off",
+    }
+ 
+11.- Al crear un createBrowserRouter debe configurar un elemento el cual contendrá el router y puede tener como componentes
+hermanos otros elementos como una barra de navegacion y footer; el elemento que ejercerá de router se le conoce como Outlet
+y es un objeto de react-router-dom
+
+  const Layout = () => {
+    return (
+      <div className="app">
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </div>
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        { path: '/', element: <Home /> },
+        ... 
+      ],
+    },
+  ]);
+  
+
+13.- En cualquier componente se puede llamar el hook useLocation() para obtener la 
+ruta actual de la aplicación y utiizarse en lógica del componente de la siguiente manera:
+
+import { Link, useLocation } from 'react-router-dom';
+const { pathname } = useLocation();
